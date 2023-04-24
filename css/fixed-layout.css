@@ -1,0 +1,111 @@
+/*
+  Hmm = 240mm; Hpt = 680.3149606 (Hnm*2.8346456693)
+  Wmm = 170mm; Wpt = 481.8897638; 
+  Kmm коэф. mm>px: 2.875 (--main-heght-px / Hmm);
+  Kpt коэф. pt>px: 1.014236111108012 (Kmm/2.8346456693)
+  */
+:root {
+  /* sizes */
+  --Hmm: 240;
+  --Wmm: 170;
+  --Hpx: 690px;
+  --Mgn-left-mm: 15;
+  --Mgn-top-mm: 15;
+  --Mgn-right-mm: 15;
+  --Mgn-bott-mm: 15;
+  /* colors */
+  --master-lines-clr: black;
+  --master-txt-clr: black;
+  --table-lines-clr:black;
+}
+
+body,
+div,
+dl,
+dt,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+pre,
+code,
+blockquote {
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  text-rendering: optimizeSpeed;
+}
+
+body {
+  --Kmm: calc(var(--Hpx) / var(--Hmm));
+  --Kpt: calc(var(--Hpx) / var(--Hmm) / 2.8346456693);
+  box-sizing: border-box;
+}
+div {
+  /* =================временно================*/
+  border: 1px solid var(--master-lines-clr);
+}
+
+/* ----------------Стили фреймы Основной разметки страницы --------------- */
+
+.page_container {
+  --Wpx: calc(var(--Wmm) * var(--Kmm));
+  --Mgn-left-px: calc(var(--Mgn-left-mm) * var(--Kmm) - 2px);
+  --Mgn-top-px: calc(var(--Mgn-top-mm) * var(--Kmm) - 2px);
+  --Mgn-right-px: calc(var(--Mgn-right-mm) * var(--Kmm) - 2px);
+  --Mgn-bott-px: calc(var(--Mgn-bott-mm) * var(--Kmm) - 2px);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: var(--Wpx);
+  height: var(--Hpx);
+  background-color: #eee;
+}
+
+/* main {} */
+
+.type_page {
+  position: absolute;
+  top: var(--Mgn-top-px);
+  left: var(--Mgn-left-px);
+  bottom: var(--Mgn-bott-px);
+  width: calc(var(--Wpx) - var(--Mgn-left-px) - var(--Mgn-right-px) - 2px);
+  background-color: #fff;
+}
+.top-margin {
+  position: absolute;
+  top: 0px;
+  left: var(--Mgn-left-px);
+  height: var(--Mgn-top-px);
+  width: calc(var(--Wpx) - var(--Mgn-left-px) - var(--Mgn-right-px) - 2px);
+  background-color: #ddd;
+}
+.left-margin {
+  position: absolute;
+  left: 0px;
+  top: var(--Mgn-top-px);
+  width: var(--Mgn-left-px);
+  height: calc(var(--Hpx) - var(--Mgn-top-px) - var(--Mgn-bott-px) - 1px);
+  background-color: #ccc;
+}
+.right-margin {
+  width: var(--Mgn-right-px);
+  height: calc(var(--Hpx) - var(--Mgn-top-px) - var(--Mgn-bott-px) - 1px);
+  background-color: #cfc;
+}
+/* =========================== СТИЛИ ШАБЛОНА МАКЕТА ================== */
+/* --------------------------------колонтитулы-------------------------- */
+
+figure {
+  margin: 0px 1px 1px 1px;
+}
+.top-RH-left {
+  position: relative;
+  border-bottom: 1px;
+}
+top-RH-right
+
