@@ -16,7 +16,7 @@
   /* colors */
   --master-lines-clr: black;
   --master-txt-clr: black;
-  --table-lines-clr:black;
+  --table-lines-clr: black;
 }
 
 body,
@@ -107,5 +107,11 @@ figure {
   position: relative;
   border-bottom: 1px;
 }
-top-RH-right
+top-RH-right {
+  position: relative;
+  border-bottom: 1px;
+}
 
+.float-left {
+  float: left;
+}
