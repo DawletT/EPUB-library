@@ -36,7 +36,7 @@ code,
 blockquote {
   margin: 0;
   padding: 0;
-  border-width: 0;
+  /* border-style: none; */
   text-rendering: optimizeSpeed;
 }
 
@@ -45,19 +45,20 @@ body {
   --Kpt: calc(var(--Hpx) / var(--Hmm) / 2.8346456693);
   box-sizing: border-box;
 }
+/* ============================временно==============================================================*/
 div {
-  /* =================временно================*/
-  /* border: 1px solid var(--master-lines-clr); */
+  border: 1px solid lightblue;
 }
 
 /* ----------------Стили фреймы Основной разметки страницы --------------- */
 
 .page_container {
   --Wpx: calc(var(--Wmm) * var(--Kmm));
-  --Mgn-left-px: calc(var(--Mgn-left-mm) * var(--Kmm) - 2px);
-  --Mgn-top-px: calc(var(--Mgn-top-mm) * var(--Kmm) - 2px);
-  --Mgn-right-px: calc(var(--Mgn-right-mm) * var(--Kmm) - 2px);
-  --Mgn-bott-px: calc(var(--Mgn-bott-mm) * var(--Kmm) - 2px);
+  --Mgn-left-px: calc(var(--Mgn-left-mm) * var(--Kmm));
+  --Mgn-top-px: calc(var(--Mgn-top-mm) * var(--Kmm));
+  --Mgn-right-px: calc(var(--Mgn-right-mm) * var(--Kmm));
+  --Mgn-bott-px: calc(var(--Mgn-bott-mm) * var(--Kmm));
+  --TypePageW: calc(var(--Wpx) - var(--Mgn-left-px) - var(--Mgn-right-px));
   position: absolute;
   top: 0px;
   left: 0px;
@@ -73,15 +74,15 @@ div {
   top: var(--Mgn-top-px);
   left: var(--Mgn-left-px);
   bottom: var(--Mgn-bott-px);
-  width: calc(var(--Wpx) - var(--Mgn-left-px) - var(--Mgn-right-px) - 2px);
-  background-color: #fff;
+  width: var(--TypePageW);
+  /* background-color: #fff; */
 }
 .top-margin {
   position: absolute;
   top: 0px;
   left: var(--Mgn-left-px);
   height: var(--Mgn-top-px);
-  width: calc(var(--Wpx) - var(--Mgn-left-px) - var(--Mgn-right-px) - 2px);
+  width: calc(var(--Wpx) - var(--Mgn-left-px) - var(--Mgn-right-px));
   background-color: #ddd;
 }
 .left-margin {
@@ -89,31 +90,95 @@ div {
   left: 0px;
   top: var(--Mgn-top-px);
   width: var(--Mgn-left-px);
-  height: calc(var(--Hpx) - var(--Mgn-top-px) - var(--Mgn-bott-px) - 1px);
+  height: calc(var(--Hpx) - var(--Mgn-top-px) - var(--Mgn-bott-px));
   background-color: #ccc;
 }
 .right-margin {
+  position: absolute;
   width: var(--Mgn-right-px);
-  height: calc(var(--Hpx) - var(--Mgn-top-px) - var(--Mgn-bott-px) - 1px);
+  top: var(--Mgn-top-px);
+  right: 0px;
+  height: calc(var(--Hpx) - var(--Mgn-top-px) - var(--Mgn-bott-px));
   background-color: #cfc;
 }
-/* =========================== СТИЛИ ШАБЛОНА МАКЕТА ================== */
-/* --------------------------------колонтитулы-------------------------- */
+.bot-margin {
+  position: absolute;
+  top: calc(var(--Hpx) - var(--Mgn-bott-px));
+  left: var(--Mgn-left-px);
+  height: var(--Mgn-top-px);
+  width: calc(var(--Wpx) - var(--Mgn-left-px) - var(--Mgn-right-px));
+  background-color: #ddd;
+}
 
+/* =========================== СТИЛИ ШАБЛОНА МАКЕТА ================== */
+/* -------------------------------- Running Headers -------------------------- */
+
+.top-RH {
+  width: 100%;
+  bottom: 15px;
+  position: absolute;
+}
+.top-RH:after {
+  content: " ";
+  background: var(--master-lines-clr);
+  display: block;
+  width: 100%;
+  height: 1px;
+  left: 0px;
+  bottom: -2px;
+  right: 0px;
+  position: absolute;
+}
+
+.bot-RH {
+  width: 100%;
+  top: 5px;
+  position: absolute;
+}
+.bot-RH:before {
+  content: " ";
+  background: var(--master-lines-clr);
+  display: block;
+  width: 100%;
+  height: 1px;
+  left: 0px;
+  top: -2px;
+  right: 0px;
+  position: absolute;
+}
+.aside-RH-left {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  white-space: nowrap;
+  transform-origin: bottom right;
+}
+.aside-RH-right {
+  position: absolute;
+  top: 0px;
+  left: 10px;
+  white-space: nowrap;
+  transform-origin: bottom left;
+}
+
+/* ==================================== ТРАНФОРМАЦИЯ ======================== */
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
+.rotate-270 {
+  transform: rotate(270deg);
+}
+.rotate-90 {
+  transform: rotate(90deg);
+}
+
+/* ========================= СТИЛИ НАБОРНОГО ПОЛЯ ======================================== */
 figure {
   margin: 0px 1px 1px 1px;
 }
-.top-RH-left {
-  position: absolute;
-  bottom: 15px;
-
-  border-bottom: 1px var(--master-lines-clr);
-}
-.top-RH-right {
-  position: relative;
-  border-bottom: 1px;
-}
-
-.float-left {
-  float: left;
+figure img {
+  margin: 0;
 }

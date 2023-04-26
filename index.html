@@ -3,19 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=7, initial-scale=1.0" />
+    <meta name="viewport" content="initial-scale=1.0" />
     <title>EPUB book creating Library</title>
-    <link rel="stylesheet" href="css/fixed-layout.css"
+    <link rel="stylesheet" href="css/fixed-layout.css">
+  </head>
   <body>
     <div class="page_container">
       <header class="top-margin">
-        <div class="top-RH">Верхний колонтитул</div>
+        <p class="top-RH">Верхний колонтитул</з>
       </header>
+      <aside class="left-margin">
+        <p class="aside-RH-left rotate-270">Левый Боковой колонтитул</p>
+      </aside>
       <main>
-        <header class="top-margin"></header>
-        <aside class="left-margin"></aside>
         <div class="type_page">
-          <figure id="pict1" class="float-left">
+          <figure id="pict1" class="float-right">
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqJ20z-PcQfUTdFsNf_cLfDNLWtSwUDWR5wg&usqp=CAU"
               alt=""
@@ -35,8 +37,13 @@
             />
           </div>
         </div>
-        <aside class="right-margin"></aside>
       </main>
+      <aside class="right-margin">
+        <p class="aside-RH-right rotate-90">Правый боковой колонтитул</p>
+      </aside>
+      <footer class="bot-margin">
+        <p class="bot-RH">Нижний колонтитул</p>
+      </footer>
     </div>
   </body>
 </html>
