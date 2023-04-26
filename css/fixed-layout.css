@@ -47,7 +47,7 @@ body {
 }
 div {
   /* =================временно================*/
-  border: 1px solid var(--master-lines-clr);
+  /* border: 1px solid var(--master-lines-clr); */
 }
 
 /* ----------------Стили фреймы Основной разметки страницы --------------- */
@@ -104,10 +104,12 @@ figure {
   margin: 0px 1px 1px 1px;
 }
 .top-RH-left {
-  position: relative;
-  border-bottom: 1px;
+  position: absolute;
+  bottom: 15px;
+
+  border-bottom: 1px var(--master-lines-clr);
 }
-top-RH-right {
+.top-RH-right {
   position: relative;
   border-bottom: 1px;
 }
